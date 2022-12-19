@@ -1,0 +1,112 @@
+
+
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:2.8rem; 
+  z-index: 0;
+}
+
+.standard-input {
+  font-size:1.2rem;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:100%;
+  border:0;
+  border-bottom:1px solid #757575;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+.standard-input:focus { outline:none; }
+
+/* .head-text ======================================= */
+.head-text 				 {
+  color:#999; 
+  font-size:1.2rem;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.3s ease all; 
+  -moz-transition:0.3s ease all; 
+  -webkit-transition:0.3s ease all;
+}
+
+/* active state */
+.standard-input:focus ~ .head-text, .standard-input:valid ~ .head-text 		{
+  top:-22px;
+  font-size:0.9rem;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar { 
+    position:relative; 
+    display:block; 
+    width:100%; 
+}
+
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.3s ease all; 
+  -moz-transition:0.3s ease all; 
+  -webkit-transition:0.3s ease all;
+}
+
+
+/* active state */
+.standard-input:focus ~ .bar:before, .standard-input:focus ~ .bar:after {
+  width:100%;
+}
+
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+.standard-input:focus {
+    outline: none;
+}
+
+.standard-input::placeholder{
+    opacity: 0;
+}
+
+.standard-input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+.standard-input:focus::-moz-placeholder {
+    opacity: 1;
+}
+
+.standard-input:focus:-ms-input-placeholder {
+    opacity: 1;
+}
+
+.standard-input:focus:-moz-placeholder {
+    opacity: 1;
+}
+
+.standard-input::-webkit-input-placeholder {
+    color: #bbb;
+}

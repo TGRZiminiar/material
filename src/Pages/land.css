@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+body{
+    overflow: auto;
+}
+
+.hero {
+    height: 100vh;
+	width: 100%;
+    padding: 0;
+    margin: 0;
+    background: url("https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png") no-repeat;
+    background-size: cover;
+	/* background-position: center; */
+}
+
+.centerAbs{
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+}
+
+.cardBg{
+    background: url("https://static.vecteezy.com/system/resources/previews/001/849/553/original/modern-gold-background-free-vector.jpg") no-repeat;
+    background-size: cover;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+
+
+.card {
+    /* background: #191c29; */
+    /* background: url("https://static.vecteezy.com/system/resources/previews/001/849/553/original/modern-gold-background-free-vector.jpg") no-repeat;
+    background-size: cover; */
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    font-family: cursive;
+}
+  
+/* .card:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+}
+.card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+} */
+  
+.shown{
+    display: none;
+    /* transition-duration: 0.5s; */
+}
+
+/* .shown:hover {
+    transition-duration: 5s;
+} */
+
+/* active state */
+/* .card:hover > .shown {
+    display: block;
+    left: 0;
+} */
+
+.card:hover img{
+    filter: blur(2px);;
+}
+
+.card:hover .slide{
+    transition: 1s;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    /* filter: blur(0px); */
+}
+
+.slide {
+    position: absolute;
+    left: -20rem;
+    transition: 1s;
+    
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 10%; }
+}
+
+
+.card2 {
+    /* background: #191c29; */
+    /* background: url("https://static.vecteezy.com/system/resources/previews/001/849/553/original/modern-gold-background-free-vector.jpg") no-repeat;
+    background-size: cover; */
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    font-family: cursive;
+}
+
+.inner{
+    visibility: hidden;
+    transition: visibility 0.5s, opacity 0.5s linear;
+    opacity: 0;
+}
+
+.card2:hover .inner{
+    visibility: visible;
+    opacity: 1;
+}
+.card2:hover img{
+    filter: blur(2px);
+}

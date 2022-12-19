@@ -1,0 +1,121 @@
+
+html{
+    box-sizing: border-box;
+    --bgColorMenu : #1d1d27;
+    --duration: .7s;    
+}
+
+.menu{
+    --bgColorMenu : #1d1d27;
+    margin: 0;
+    display: flex;
+    /* Works well with 100% width  */
+    width: 30rem;
+    font-size: 2rem;
+    padding: 0 2.85rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgColorMenu);
+    
+}
+
+.menu__item{
+    all: unset;
+    flex-grow: 1;
+    z-index: 100;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    align-items: center;
+    will-change: transform;
+    justify-content: center;
+    padding: 0.55rem 0 0.85rem;
+    transition: transform var(--timeOut , var(--duration));
+    
+}
+
+.menu__item::before{
+    
+    content: "";
+    z-index: -1;
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(0);
+    transition: background-color var(--duration), transform var(--duration);
+    
+}
+
+
+.menu__item.active {
+
+    transform: translate3d(0, -.8rem , 0);
+
+}
+
+.menu__item.active::before{
+    
+    transform: scale(1);
+    background-color: var(--bgColorItem);
+
+}
+
+.icon{
+    
+    width: 2.6rem;
+    height: 2.6rem;
+    stroke: white;
+    fill: transparent;
+    stroke-width: 0.1pt;
+    stroke-miterlimit: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 400;
+    
+}
+
+.menu__item.active .icon {
+
+    animation: strok 1.5s reverse;
+    
+}
+
+@keyframes strok {
+
+    100% {
+
+        stroke-dashoffset: 400;
+
+    }
+
+}
+
+.menu__border{
+
+    left: 0;
+    bottom: 99%;
+    width: 10.9rem;
+    height: 2.4rem;
+    position: absolute;
+    clip-path: url(#menu);
+    will-change: transform;
+    background-color: var(--bgColorMenu);
+    transition: transform var(--timeOut , var(--duration));
+    
+}
+
+.svg-container {
+
+    width: 0;
+    height: 0;
+}
+
+
+@media screen and (max-width: 50em) {
+    .menu{
+        font-size: .8rem;
+    }
+}

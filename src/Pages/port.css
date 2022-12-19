@@ -1,0 +1,35 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    border: inherit;
+    box-sizing: border-box;
+    background-color: rgba(10, 10, 10, 0.944);
+    color: white;
+} */
+
+.title{
+    display: flex;
+    gap: 2rem;
+}
+
+.sub-title{
+    position: relative;
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #ccc,
+                 0 3px 0 #ccc,
+                 0 4px 0 #ccc,
+                 0 5px 4px rgba(255,255,255,.4);
+
+    animation: bounce .8s ease infinite alternate;
+}
+
+.sub-title:nth-child(1){
+    animation-delay: .1s;
+}
+
+
+@keyframes bounce {
+    100%{
+        transform: translateY(-80px);
+    }
+}
